@@ -1,7 +1,51 @@
 # sui-footer
 
 ## Description
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam commodi esse quis ipsam a iusto aut ratione ex optio ut! Illum alias voluptatibus dolores, perferendis deserunt totam illo reiciendis voluptatem.
+A generic footer div container to fit as many content blocks with title and list items as provided.
+
+## Usage
+This React component will iterate an array of objects to create different content block. The data model structure must be as follows:
+
+```
+const data = [
+    {
+      block: 'cats',
+      items: [
+        {literal: 'Persian Cat', link: 'https://en.wikipedia.org/wiki/Persian_cat'},
+        {literal: 'Balinese Cat', link: 'https://en.wikipedia.org/wiki/Balinese_cat'},
+        {literal: 'British Shorthair Cat', link: 'https://es.wikipedia.org/wiki/British_Shorthair'}
+      ]
+    },
+
+    {
+      block: 'dogs',
+      items: [
+        {literal: 'Border Collie', link: 'https://es.wikipedia.org/wiki/Border_collie'},
+        {literal: 'Dalmatian', link: 'https://en.wikipedia.org/wiki/Dalmatian_(dog)'},
+        {literal: 'Shetland Sheepdog', link: 'https://en.wikipedia.org/wiki/Shetland_Sheepdog'}
+      ]
+    }
+  ,
+
+    {
+      block: 'hamsters',
+      items: [
+        {literal: 'Syrian Hamsters', link: 'https://en.wikipedia.org/wiki/Golden_hamster'},
+        {literal: 'Dwarf Campbell', link: 'https://en.wikipedia.org/wiki/Campbell%27s_dwarf_hamster'},
+        {literal: 'Phodopus roborovskii', link: 'https://es.wikipedia.org/wiki/Phodopus_roborovskii'}
+      ]
+    }
+];
+```
+
+To render the component with this data:
+
+```
+React.render(
+  <Footer data={data} />,
+  document.getElementById('main'));
+
+```
 
 ## Instalation
 Clone this repository and run:
@@ -40,5 +84,3 @@ $ npm run doc
 That will publish in a gh-page for `docs` folder.
 What is a component without a public demo, isn´t ?!
 
-## Usage
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non perspiciatis, quod eum perferendis, facere enim hic. Quibusdam deleniti, distinctio. Molestias error quibusdam quo similique, laborum iste libero dolorum saepe et.
