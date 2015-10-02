@@ -1,5 +1,5 @@
 {
-  "name": "sui-footer",
+  "name": "@schibstedspain/sui-footer",
   "version": "0.0.2",
   "main": "dist/",
   "scripts": {
