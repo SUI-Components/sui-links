@@ -1,5 +1,3 @@
-import React from 'react';
-import TestUtils from 'react/lib/ReactTestUtils';
 import {createComponent} from './utilities';
 import expect from 'expect';
 import Footer from '../src/sui-footer';

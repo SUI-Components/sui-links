@@ -10,7 +10,7 @@ export default class Footer extends React.Component {
     });
 
     return (
-        <div className='groups'>
+        <div className='sui-Footer'>
           {footerGroups}
         </div>
     );

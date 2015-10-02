@@ -8,8 +8,3 @@ export default class FooterGroup extends React.Component {
     );
   };
 }
-
-FooterGroup.propTypes = {
-  group: React.PropTypes.Object
-};
-

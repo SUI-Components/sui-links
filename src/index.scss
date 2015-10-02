@@ -1,2 +1,7 @@
+// Import npm packages dependencies
 @import '~@schibstedspain/theme-basic/src/settings';
+
+// Import Footer component and subcomponents SASS files
 @import './sui-footer/sui-footer';
+@import './sui-footer-group/sui-footer-group';
+@import './sui-footer-itemlist/sui-footer-itemlist';

@@ -1,6 +1,7 @@
-$color: #cccccc;
+@import './settings';
 
 .sui-Footer {
-  background-color: $color;
+  background-color: $footer-bg-color;
+  display: flex;
 }
 
