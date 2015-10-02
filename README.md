@@ -3,6 +3,9 @@
 ## Description
 A generic footer div container to fit as many content blocks with title and list items as provided.
 
+## Demo page
+Visit the [demo page](http://sui-components.github.io/sui-footer/) to see SUI-Footer in action.
+
 ## Usage
 This React component will iterate an array of objects to create different content block. The data model structure must be as follows:
 
