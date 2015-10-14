@@ -9,6 +9,9 @@ const data = [
       items: [
         {literal: 'Persian Cat', link: 'https://en.wikipedia.org/wiki/Persian_cat'},
         {literal: 'Balinese Cat', link: 'https://en.wikipedia.org/wiki/Balinese_cat'},
+        {literal: 'British Shorthair Cat', link: 'https://es.wikipedia.org/wiki/British_Shorthair'},
+        {literal: 'British Shorthair Cat', link: 'https://es.wikipedia.org/wiki/British_Shorthair'},
+        {literal: 'British Shorthair Cat', link: 'https://es.wikipedia.org/wiki/British_Shorthair'},
         {literal: 'British Shorthair Cat', link: 'https://es.wikipedia.org/wiki/British_Shorthair'}
       ]
     },
