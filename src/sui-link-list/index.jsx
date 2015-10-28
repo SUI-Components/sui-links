@@ -11,11 +11,12 @@ export default class LinkList extends React.Component{
     return (
       <ul className='sui-LinkList'>
         {this.props.list.map(item => {
-          return (
-            <li className={classListItem}>
-              <Link {...item} />
-            </li>
-          )}
+            return (
+              <li className={classListItem}>
+                <Link {...item} />
+              </li>
+            );
+          }
         )}
       </ul>
     );

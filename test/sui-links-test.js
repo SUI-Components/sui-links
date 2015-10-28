@@ -1,12 +1,12 @@
 import {createComponent} from './utilities';
 import expect from 'expect';
-import Links from '../src/sui-links';
+import Link from '../src/sui-link';
 
 describe('sui-links component test suite', function () {
 
   describe('loading', function() {
     it('component is loaded properly', function () {
-      expect(Links).toNotBe(undefined);
+      expect(Link).toNotBe(undefined);
     });
   });
 
@@ -26,7 +26,7 @@ describe('sui-links component test suite', function () {
     ];
 
     beforeEach(() => {
-      component = createComponent(Links, {data});
+      component = createComponent(Link, {data});
     });
 
     afterEach(() => {
