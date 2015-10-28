@@ -24,6 +24,6 @@ export default class LinkList extends React.Component{
 }
 
 LinkList.propTypes = {
-  list: React.PropTypes.object,
+  list: React.PropTypes.array,
   displayInline: React.PropTypes.boolean
 };

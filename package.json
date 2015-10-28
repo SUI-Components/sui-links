@@ -1,6 +1,6 @@
 {
   "name": "@schibstedspain/sui-links",
-  "version": "0.0.4",
+  "version": "0.0.1",
   "main": "dist/",
   "scripts": {
     "clean:dist": "rm -Rf ./dist/*",

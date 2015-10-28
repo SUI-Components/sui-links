@@ -9,7 +9,6 @@ export default class Link extends React.Component{
     });
 
     return (
-      //<li className='sui-Footer-listItem'>
       <div>
         {this.props.icon && <span className={classIcon}></span>}
         <a href={this.props.link} title={i18n.t(this.props.title)} target={this.props.target}>
