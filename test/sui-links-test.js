@@ -1,16 +1,16 @@
 import {createComponent} from './utilities';
 import expect from 'expect';
-import Footer from '../src/sui-footer';
+import Links from '../src/sui-links';
 
-describe('sui-footer component test suite', function () {
+describe('sui-links component test suite', function () {
 
   describe('loading', function() {
     it('component is loaded properly', function () {
-      expect(Footer).toNotBe(undefined);
+      expect(Links).toNotBe(undefined);
     });
   });
 
-  describe('sui-footer renders properly', function () {
+  describe('sui-links renders properly', function () {
     let component;
     let data = [
      [
@@ -26,7 +26,7 @@ describe('sui-footer component test suite', function () {
     ];
 
     beforeEach(() => {
-      component = createComponent(Footer, {data});
+      component = createComponent(Links, {data});
     });
 
     afterEach(() => {

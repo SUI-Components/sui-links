@@ -1,7 +1,6 @@
-// Import npm packages dependencies
-@import '~@schibstedspain/theme-basic/src/settings';
+$fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.4.0/fonts' !default; // for referencing Bootstrap CDN font files directly
+@import '../node_modules/@schibstedspain/theme-basic/src/settings';
+@import '../node_modules/font-awesome/scss/font-awesome';
 
-// Import Footer component and subcomponents SASS files
-@import './sui-footer/sui-footer';
-@import './sui-footer-group/sui-footer-group';
-@import './sui-footer-itemlist/sui-footer-itemlist';
+@import './src/sui-link-list/sui-link-list';
+@import './src/sui-link/sui-link';

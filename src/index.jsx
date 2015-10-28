@@ -1,3 +1,4 @@
-import Footer from './sui-footer';
+import Link from './sui-link';
+import LinkList from './sui-link-list';
 
-export default Footer;
+export default {Link, LinkList};
