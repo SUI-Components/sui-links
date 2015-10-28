@@ -6,5 +6,5 @@ export default class FooterGroup extends React.Component {
     return (
       <FooterList {...this.props} />
     );
-  };
+  }
 }

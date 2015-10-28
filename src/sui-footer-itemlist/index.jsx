@@ -5,7 +5,7 @@ export default class FooterList extends React.Component{
     const list = this.props.group.items.map((item) => {
       return (
         <li className='sui-Footer-listItem'>
-          <a href={item.link}>
+          <a href={item.link} title={item.title} target={item.target}>
             {item.literal}
           </a>
         </li>
@@ -20,7 +20,7 @@ export default class FooterList extends React.Component{
         </ul>
       </div>
     );
-  };
+  }
 }
 
 FooterList.propTypes = {
