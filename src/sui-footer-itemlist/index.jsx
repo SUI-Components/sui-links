@@ -20,7 +20,7 @@ export default class FooterList extends React.Component{
         </ul>
       </div>
     );
-  };
+  }
 }
 
 FooterList.propTypes = {
