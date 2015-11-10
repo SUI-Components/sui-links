@@ -25,17 +25,15 @@ export default class Link extends React.Component{
   }
 
   render() {
-    const classIcon = cx('fa', 'sui-Link-icon', {
-      [`fa-${this.props.icon}`]: this.props.icon
-    });
+    const classIcon = cx('fa',
+      'sui-Link-icon', {[`fa-${this.props.icon}`]: this.props.icon}
+    );
 
     return (
-      <div>
-        {this.props.icon && <span className={classIcon}></span>}
-        <a href={this.props.link} title={this.i18n.t(this.props.title)} target={this.props.target}>
+        <a className='sui-Link' href={this.props.link} title={this.i18n.t(this.props.title)} target={this.props.target}>
+          {this.props.icon && <span className={classIcon}></span>}
           {this.i18n.t(this.props.literal)}
         </a>
-      </div>
     );
   }
 }
