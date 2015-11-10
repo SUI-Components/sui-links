@@ -7,47 +7,47 @@ A generic links div container to fit as many content blocks with title and list 
 Visit the [demo page](http://sui-components.github.io/sui-links/) to see SUI-Links in action.
 
 ## Usage
-This React component will iterate an array of objects to create different content block. The data model structure must be as follows:
+This React component will iterate an array of objects to create different content blocks.
 
 ```
-const data = [
-    {
-      block: 'cats',
-      items: [
-        {literal: 'Persian Cat', link: 'https://en.wikipedia.org/wiki/Persian_cat'},
-        {literal: 'Balinese Cat', link: 'https://en.wikipedia.org/wiki/Balinese_cat'},
-        {literal: 'British Shorthair Cat', link: 'https://es.wikipedia.org/wiki/British_Shorthair'}
-      ]
-    },
+ReactDom.render(
+  <Link {...singleLink} />,
+  document.getElementById('link'));
 
-    {
-      block: 'dogs',
-      items: [
-        {literal: 'Border Collie', link: 'https://es.wikipedia.org/wiki/Border_collie'},
-        {literal: 'Dalmatian', link: 'https://en.wikipedia.org/wiki/Dalmatian_(dog)'},
-        {literal: 'Shetland Sheepdog', link: 'https://en.wikipedia.org/wiki/Shetland_Sheepdog'}
-      ]
-    }
-  ,
+ReactDom.render(
+  <LinkList list={linkList}/>,
+  document.getElementById('link-list'));
 
-    {
-      block: 'hamsters',
-      items: [
-        {literal: 'Syrian Hamsters', link: 'https://en.wikipedia.org/wiki/Golden_hamster'},
-        {literal: 'Dwarf Campbell', link: 'https://en.wikipedia.org/wiki/Campbell%27s_dwarf_hamster'},
-        {literal: 'Phodopus roborovskii', link: 'https://es.wikipedia.org/wiki/Phodopus_roborovskii'}
-      ]
-    }
+```
+
+## Data structure
+Provide the following data structure for a *singleLink* or a *linkList*:
+
+```
+const singleLink = {
+    literal: 'Alquiler de pisos en Madrid Capital',
+    title: 'Element title',
+    target: '_parent',
+    link: 'http://fotocasa.es',
+    icon: 'beer'
+};
+
+const linkList = [
+  {
+    literal: 'Alquiler de pisos en Madrid Capital',
+    title: 'Element title',
+    target: '_parent',
+    link: 'http://fotocasa.es',
+    icon: 'beer'
+  },
+  {
+    literal: 'Comprar pisos',
+    title: 'Element title',
+    target: '_parent',
+    link: 'http://fotocasa.es',
+    icon: 'beer'
+  },
 ];
-```
-
-To render the component with this data:
-
-```
-React.render(
-  <Links data={data} />,
-  document.getElementById('main'));
-
 ```
 
 ## Instalation
@@ -64,6 +64,7 @@ To run the lint tasks we have dependencies of:
 * [scss-lint](https://github.com/brigade/scss-lint)
 
 If that tools are not installed you cant commit. Because the lint pass never will be ok.
+To get further information please checkout the [Frontend Precomit Rules](https://github.com/scm-spain/frontend-pre-commit-rules) doc page.
 
 ## Start working in development mode:
 ```
@@ -79,6 +80,12 @@ $ npm run test:watch
 ```
 $ npm test
 ```
+
+## To run SASS linting:
+```
+$ npm run lint:sass
+```
+
 ## To publish yours docs page:
 ```
 $ npm run doc
