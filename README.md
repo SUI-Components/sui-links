@@ -7,7 +7,7 @@ A generic links div container to fit as many content blocks with title and list 
 Visit the [demo page](http://sui-components.github.io/sui-links/) to see SUI-Links in action.
 
 ## Usage
-This React component will iterate an array of objects to create different content block.
+This React component will iterate an array of objects to create different content blocks.
 
 ```
 ReactDom.render(
