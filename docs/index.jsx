@@ -5,14 +5,23 @@ import './style.scss';
 import '../src/index.scss';
 import {singleLink, linkList, inlineLinkList} from './data';
 
+import Rosetta from '@schibstedspain/rosetta';
+import Polyglot from '@schibstedspain/rosetta/lib/adapters/polyglot';
+
+const i18n = new Rosetta();
+i18n.adapter = new Polyglot();
+
+const I18NLink = i18n.addToContext(Link);
+const I18NLinkList = i18n.addToContext(LinkList);
+
 ReactDom.render(
-  <Link {...singleLink} />,
+  <I18NLink {...singleLink} />,
   document.getElementById('link'));
 
 ReactDom.render(
-  <LinkList list={linkList}/>,
+  <I18NLinkList list={linkList}/>,
   document.getElementById('link-list'));
 
 ReactDom.render(
-  <LinkList list={inlineLinkList} displayInline />,
+  <I18NLinkList list={inlineLinkList} displayInline />,
   document.getElementById('link-list-inline'));
