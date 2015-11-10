@@ -34,24 +34,19 @@
   "scripts": {
     "clean:dist": "rm -Rf ./dist/*",
     "predist": "npm run clean:dist -s",
-
     "dist": "npm run dist:scripts && npm run dist:styles",
     "dist:scripts": "babel src --out-dir dist",
     "dist:styles": "node-sass src/index.scss dist/sui-links.css --importer ./scripts/importer.js",
     "postdist:styles": "cp dist/sui-links.css dist/_sui-links.scss",
     "prepublish": "npm run dist",
-
     "lint": "npm run lint:eslint && npm run lint:sass",
     "lint:eslint": "eslint --ext=.js --ext=.jsx ./src/ ./test/ ./docs/",
     "lint:sass": "scss-lint src/",
-
     "test": "mocha --compilers js:babel/register --recursive",
     "test:watch": "npm run test -- -w test src --watch-extensions jsx",
-
     "dev": "npm run dev:open && npm run dev:serve",
     "dev:serve": "webpack-dev-server --devtool eval --progress --colors --content-base docs/",
     "dev:open": "opener http://localhost:8080",
-
     "predoc": "webpack --config webpack.doc.config.js",
     "doc": "npm run doc:build",
     "doc:build": "gh-pages -d docs"
@@ -67,8 +62,9 @@
   "peerDependencies": {
     "react": "0.14.0"
   },
-"dependencies": {
-    "@schibstedspain/theme-basic": "latest"
+  "dependencies": {
+    "@schibstedspain/theme-basic": "latest",
+    "classnames": "2.2.0"
   },
   "devDependencies": {
     "@schibstedspain/frontend-pre-commit-rules": "latest",
