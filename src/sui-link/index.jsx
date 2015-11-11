@@ -3,25 +3,14 @@ import cx from 'classnames';
 
 export default class Link extends React.Component{
 
-  static get contextTypes(){
-    return {
-      i18n: React.PropTypes.object
-    };
-  }
-
   static get propTypes(){
     return {
-      link: React.PropTypes.string,
+      url: React.PropTypes.string,
       literal: React.PropTypes.string,
       title: React.PropTypes.string,
       target: React.PropTypes.string,
       icon: React.PropTypes.string
     };
-  }
-
-  constructor(...args) {
-    super(...args);
-    this.i18n = this.context.i18n || this.getChildContext().i18n;
   }
 
   render() {
@@ -30,9 +19,9 @@ export default class Link extends React.Component{
     );
 
     return (
-        <a className='sui-Link' href={this.props.link} title={this.i18n.t(this.props.title)} target={this.props.target}>
+        <a className='sui-Link' href={this.props.url} title={this.props.title} target={this.props.target}>
           {this.props.icon && <span className={classIcon}></span>}
-          {this.i18n.t(this.props.literal)}
+          {this.props.literal}
         </a>
     );
   }

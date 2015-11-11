@@ -10,6 +10,7 @@ export default class LinkList extends React.Component{
       displayInline: React.PropTypes.bool
     };
   }
+
   render() {
     const classListItem = cx('sui-LinkList-listItem', {
       'sui-listItem--inline': this.props.displayInline
