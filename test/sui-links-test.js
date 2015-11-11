@@ -1,6 +1,5 @@
-import {createComponent} from './utilities';
 import expect from 'expect';
-import {Link, LinkList} from '../src/sui-link';
+import {Link, LinkList} from '../src';
 
 describe('sui-links components should', function () {
   it('be loaded properly', function () {
