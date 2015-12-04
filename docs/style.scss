@@ -1,7 +1,16 @@
 // Your Doc page styles here!
+$c-greencolor: #008800;
+
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+
+*,
+*:before,
+*:after {
   box-sizing: inherit;
+}
+
+.sui-Link-customclass {
+  color: $c-greencolor;
 }
