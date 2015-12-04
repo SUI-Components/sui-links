@@ -1,8 +1,8 @@
 import ReactDom from 'react-dom';
 import React from 'react';
 import {Link, LinkList} from '../src';
-import './style';
-import '../src/index';
+import '../src/index.scss';
+import './index.scss';
 import {singleLink, linkList, inlineLinkList} from './data';
 
 import Rosetta from '@schibstedspain/rosetta';
