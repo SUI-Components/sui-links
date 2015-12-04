@@ -1,9 +1,29 @@
+import ReactDom from 'react-dom';
 import React from 'react';
-import Footer from '../src';
-import './style.scss';
-import '../src/index.scss';
-import data from './data';
+import {Link, LinkList} from '../src';
+import './style';
+import '../src/index';
+import {singleLink, linkList, inlineLinkList} from './data';
 
-React.render(
-  <Footer data={data} />,
-  document.getElementById('main'));
+import Rosetta from '@schibstedspain/rosetta';
+import Polyglot from '@schibstedspain/rosetta/lib/adapters/polyglot';
+
+const i18n = new Rosetta();
+i18n.adapter = new Polyglot();
+
+const I18NLink = i18n.addToContext(Link);
+const I18NLinkList = i18n.addToContext(LinkList);
+
+ReactDom.render(
+  <I18NLink {...singleLink}
+  customclass={'sui-Link-customclass'}
+  url={'http://google.com'}/>,
+  document.getElementById('link'));
+
+ReactDom.render(
+  <I18NLinkList list={linkList}/>,
+  document.getElementById('link-list'));
+
+ReactDom.render(
+  <I18NLinkList list={inlineLinkList} displayInline />,
+  document.getElementById('link-list-inline'));
