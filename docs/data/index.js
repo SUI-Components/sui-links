@@ -1,4 +1,5 @@
 const singleLink = { literal: 'Alquiler de pisos en Madrid Capital', title: 'Element title', target: '_parent', url: 'http://fotocasa.es', icon: 'beer' };
+const linkWithClick = { literal: 'Previous click: never', title: 'Element title', target: '_parent', url: 'http://fotocasa.es', icon: 'beer', handleClick: function(event) {event.target.innerText = `Previous click: ${new Date().toLocaleString()}`;}};
 
 const linkList = [
   { literal: 'Alquiler de pisos en Madrid Capital', title: 'Element title', target: '_parent', url: 'http://fotocasa.es', icon: 'beer' },
@@ -19,4 +20,4 @@ const inlineLinkList = [
 ];
 
 
-export default {singleLink, linkList, inlineLinkList};
+export default {singleLink, linkList, inlineLinkList, linkWithClick};
