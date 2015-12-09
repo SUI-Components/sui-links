@@ -10,7 +10,8 @@ export default class Link extends React.Component{
       title: React.PropTypes.string,
       target: React.PropTypes.string,
       icon: React.PropTypes.string,
-      customclass: React.PropTypes.string
+      customclass: React.PropTypes.string,
+      handleClick: React.PropTypes.func
     };
   }
 
@@ -24,7 +25,12 @@ export default class Link extends React.Component{
     );
 
     return (
-        <a className={customclass} href={this.props.url} title={this.props.title} target={this.props.target}>
+        <a className={customclass}
+           href={this.props.url}
+           title={this.props.title}
+           target={this.props.target}
+           onClick={this.props.handleClick}
+           >
           {this.props.icon && <span className={classIcon}></span>}
           {this.props.literal}
         </a>

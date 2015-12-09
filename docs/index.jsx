@@ -3,7 +3,7 @@ import React from 'react';
 import {Link, LinkList} from '../src';
 import '../src/index.scss';
 import './index.scss';
-import {singleLink, linkList, inlineLinkList} from './data';
+import {singleLink, linkList, inlineLinkList, linkWithClick} from './data';
 
 import Rosetta from '@schibstedspain/rosetta';
 import Polyglot from '@schibstedspain/rosetta/lib/adapters/polyglot';
@@ -19,6 +19,12 @@ ReactDom.render(
   customclass={'sui-Link-customclass'}
   url={'http://google.com'}/>,
   document.getElementById('link'));
+
+ReactDom.render(
+	<I18NLink {...linkWithClick}
+	url={'#'} />,
+	document.getElementById('link-with-click')
+	);
 
 ReactDom.render(
   <I18NLinkList list={linkList}/>,
