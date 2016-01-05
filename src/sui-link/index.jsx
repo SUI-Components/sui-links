@@ -11,7 +11,8 @@ export default class Link extends React.Component{
       target: React.PropTypes.string,
       icon: React.PropTypes.string,
       customclass: React.PropTypes.string,
-      handleClick: React.PropTypes.func
+      handleClick: React.PropTypes.func,
+      disabled: React.PropTypes.bool
     };
   }
 
@@ -24,17 +25,25 @@ export default class Link extends React.Component{
       'sui-Link-icon', {[`fa-${this.props.icon}`]: this.props.icon}
     );
 
-    return (
-        <a className={customclass}
-           href={this.props.url}
-           title={this.props.title}
-           target={this.props.target}
-           onClick={this.props.handleClick}
-           >
-          {this.props.icon && <span className={classIcon}></span>}
-          {this.props.literal}
-        </a>
+    const disabledLink = (
+      <span className={customclass} title={this.props.title}>
+        {this.props.icon && <span className={classIcon}></span>}
+        {this.props.literal}
+      </span>
     );
+
+    const enabledLink = (
+      <a className={customclass}
+         href={this.props.url}
+         title={this.props.title}
+         target={this.props.target}
+         onClick={this.props.handleClick}>
+        {this.props.icon && <span className={classIcon}></span>}
+        {this.props.literal}
+      </a>
+    );
+
+    return this.props.disabled ? disabledLink : enabledLink;
   }
 }
 
