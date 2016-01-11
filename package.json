@@ -1,6 +1,6 @@
 {
   "name": "@schibstedspain/sui-links",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "main": "dist/",
   "contributors": [
     {
@@ -36,8 +36,7 @@
     "predist": "npm run clean:dist -s",
     "dist": "npm run dist:scripts && npm run dist:styles",
     "dist:scripts": "babel src --out-dir dist",
-    "dist:styles": "node-sass src/index.scss dist/sui-links.css --importer ./scripts/importer.js",
-    "postdist:styles": "cp dist/sui-links.css dist/_sui-links.scss",
+    "dist:styles": "node-sass src/index.scss dist/_sui-links.scss --importer ./scripts/importer.js",
     "prepublish": "npm run dist",
     "lint": "npm run lint:eslint && npm run lint:sass",
     "lint:eslint": "eslint --ext=.js --ext=.jsx ./src/ ./test/ ./docs/",
