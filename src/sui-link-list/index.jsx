@@ -13,7 +13,7 @@ export default class LinkList extends React.Component{
 
   render() {
     const classListItem = cx('sui-LinkList-listItem', {
-      'sui-listItem--inline': this.props.displayInline
+      'sui-ListItem--inline': this.props.displayInline
     });
 
     return (
