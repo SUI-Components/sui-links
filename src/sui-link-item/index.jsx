@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router';
 import cx from 'classnames';
 
-export default class Link extends React.Component{
+export default class LinkItem extends React.Component{
 
   static get propTypes(){
     return {
@@ -12,7 +13,8 @@ export default class Link extends React.Component{
       icon: React.PropTypes.string,
       customclass: React.PropTypes.string,
       handleClick: React.PropTypes.func,
-      disabled: React.PropTypes.bool
+      disabled: React.PropTypes.bool,
+      useReactRouterLinks: React.PropTypes.bool
     };
   }
 
@@ -25,14 +27,16 @@ export default class Link extends React.Component{
       'sui-Link-icon', {[`fa-${this.props.icon}`]: this.props.icon}
     );
 
-    const disabledLink = (
-      <span className={customclass} title={this.props.title}>
+    const htmlDisabledLink = (
+      <span className={customclass}
+        onClick={this.props.handleClick}
+        title={this.props.title}>
         {this.props.icon && <span className={classIcon}></span>}
         {this.props.literal}
       </span>
     );
 
-    const enabledLink = (
+    const htmlLink = (
       <a className={customclass}
          href={this.props.url}
          title={this.props.title}
@@ -43,7 +47,26 @@ export default class Link extends React.Component{
       </a>
     );
 
-    return this.props.disabled ? disabledLink : enabledLink;
+    const reactRouterLink = (
+      <Link className={customclass}
+            target={this.props.target}
+            title={this.props.title}
+            to={this.props.url}
+            onClick={this.props.handleClick}>
+        {this.props.icon && <span className={classIcon}></span>}
+        {this.props.literal}
+      </Link>
+    );
+
+    if ( this.props.disabled ) {
+      return htmlDisabledLink;
+    }
+
+    if ( this.props.useReactRouterLinks ) {
+      return reactRouterLink;
+    }
+
+    return htmlLink;
   }
 }
 

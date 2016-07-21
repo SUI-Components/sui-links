@@ -1,35 +1,77 @@
-import ReactDom from 'react-dom';
 import React from 'react';
-import {Link, LinkList} from '../src';
+import ReactDom from 'react-dom';
+import { Router, Route, browserHistory } from 'react-router';
+import { Link, LinkList } from '../src';
+import { htmlLinks, reactRouterLinks, disabledLinks } from './data';
 import '../src/index.scss';
 import './index.scss';
-import {singleLink, linkList, inlineLinkList, linkWithClick} from './data';
 
-import Rosetta from '@schibstedspain/rosetta';
-import Polyglot from '@schibstedspain/rosetta/lib/adapters/polyglot';
+const linkGroups = () => {
+  return (
+    <div>
+      <div className='link-Group'>
+        <h1>HTML Links</h1>
+        <h2>A single html link</h2>
+        <Link {...htmlLinks.single}
+          customclass={'sui-Link-customclass'}
+          url={'http://google.com'} />
+        <h2>An html link with click</h2>
+        <Link {...htmlLinks.withClick}
+          url={'#'} />
+        <h2>A list of html links</h2>
+        <LinkList list={htmlLinks.list} />
+        <h2>An inline list of html links</h2>
+        <LinkList list={htmlLinks.inlineList}
+          displayInline />
+      </div>
 
-const i18n = new Rosetta();
-i18n.adapter = new Polyglot();
+      <div className='link-Group'>
+        <h1>React Router Links</h1>
+        <h2>A single react router link</h2>
+        <Link {...reactRouterLinks.single}
+          customclass={'sui-Link-customclass'}
+          url={'/foo'}
+          useReactRouterLinks={true} />
+        <h2>A react router link with click</h2>
+        <Link {...reactRouterLinks.withClick}
+          useReactRouterLinks={true}
+          url={'#'} />
+        <h2>A list of react router links</h2>
+        <LinkList list={reactRouterLinks.list}
+          useReactRouterLinks={true} />
+        <h2>An inline list of react router links</h2>
+        <LinkList list={reactRouterLinks.inlineList}
+          displayInline
+          useReactRouterLinks={true} />
+      </div>
 
-const I18NLink = i18n.addToContext(Link);
-const I18NLinkList = i18n.addToContext(LinkList);
+      <div className='link-Group'>
+        <h1>Disabled Links</h1>
+        <h2>A single disabled link</h2>
+        <Link {...disabledLinks.single}
+          customclass={'sui-Link-customclass'}
+          url={'http://google.com'}
+          disabled />
+        <h2>A disabled link with click</h2>
+        <Link {...disabledLinks.withClick}
+          customclass={'sui-Link-disabled'}
+          disabled
+          url={'#'} />
+        <h2>A list of disabled links</h2>
+        <LinkList list={disabledLinks.list} />
+        <h2>An inline list of disabled links</h2>
+        <LinkList list={disabledLinks.inlineList}
+          displayInline />
+      </div>
+    </div>
+  );
+};
 
 ReactDom.render(
-  <I18NLink {...singleLink}
-  customclass={'sui-Link-customclass'}
-  url={'http://google.com'}/>,
-  document.getElementById('link'));
-
-ReactDom.render(
-	<I18NLink {...linkWithClick}
-	url={'#'} />,
-	document.getElementById('link-with-click')
-	);
-
-ReactDom.render(
-  <I18NLinkList list={linkList}/>,
-  document.getElementById('link-list'));
-
-ReactDom.render(
-  <I18NLinkList list={inlineLinkList} displayInline />,
-  document.getElementById('link-list-inline'));
+  <Router history={browserHistory}>
+    <Route path='/' component={linkGroups} />
+    <Route path='/foo' component={linkGroups} />
+    <Route path='/test' component={linkGroups} />
+  </Router>,
+  document.getElementById('main')
+);
