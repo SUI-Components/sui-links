@@ -14,6 +14,15 @@ module.exports = {
   resolve: {
     extensions: ['', '.js', '.jsx']
   },
+  devServer: {
+    port: 8080,
+    historyApiFallback: true,
+    stats: {
+      colors: true
+    },
+    inline: true,
+    contentBase: 'docs'
+  },
   module: {
     loaders: [
       {

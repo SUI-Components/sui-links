@@ -1,7 +1,9 @@
 $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.4.0/fonts' !default; // for referencing Bootstrap CDN font files directly
 @import '~font-awesome/scss/font-awesome';
 
-$c-greencolor: #00dd00;
+$c-customlink: #00dd00;
+$c-disabledlink: #999999;
+$c-link: #0000dd;
 
 html {
   box-sizing: border-box;
@@ -13,6 +15,19 @@ html {
   box-sizing: inherit;
 }
 
-.sui-Link-customclass {
-  color: $c-greencolor;
+.link-Group {
+  clear: both;
+  margin-bottom: 20px;
+}
+
+.sui-Link {
+  color: $c-link;
+
+  &-customclass {
+    color: $c-customlink;
+  }
+
+  &-disabled {
+    color: $c-disabledlink;
+  }
 }

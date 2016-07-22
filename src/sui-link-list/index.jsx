@@ -1,12 +1,12 @@
 import React from 'react';
-import Link from '../sui-link';
+import LinkItem from '../sui-link-item';
 import cx from 'classnames';
 
 export default class LinkList extends React.Component{
-
   static get propTypes(){
     return {
       list: React.PropTypes.array,
+      useReactRouterLinks: React.PropTypes.bool,
       displayInline: React.PropTypes.bool
     };
   }
@@ -19,13 +19,12 @@ export default class LinkList extends React.Component{
     return (
       <ul className='sui-LinkList'>
         {this.props.list.map((item, index) => {
-            return (
-              <li className={classListItem} key={index}>
-                <Link {...item} />
-              </li>
-            );
-          }
-        )}
+          return (
+            <li className={classListItem} key={index}>
+              <LinkItem {...item} useReactRouterLinks={this.props.useReactRouterLinks} />
+            </li>
+          );
+        })}
       </ul>
     );
   }
