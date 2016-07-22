@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import { Router, Route, browserHistory } from 'react-router';
+import { Router, Route, Redirect } from 'react-router';
+import createBrowserHistory from 'history/lib/createBrowserHistory';
 import { Link, LinkList } from '../src';
 import { htmlLinks, reactRouterLinks, disabledLinks } from './data';
 import '../src/index.scss';
@@ -67,9 +68,12 @@ const linkGroups = () => {
   );
 };
 
+const onRouterUpdate = () => window.scrollTo(0, 0);
+
 ReactDom.render(
-  <Router history={browserHistory}>
-    <Route path='/' component={linkGroups} />
+  <Router onUpdate={onRouterUpdate} history={createBrowserHistory()}>
+    <Redirect from='/' to='/links' />
+    <Route path='/links' component={linkGroups} />
     <Route path='/foo' component={linkGroups} />
     <Route path='/test' component={linkGroups} />
   </Router>,
