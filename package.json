@@ -59,12 +59,12 @@
     "test"
   ],
   "dependencies": {
-    "@schibstedspain/theme-basic": "3.0.1",
+    "@schibstedspain/theme-basic": "3.0",
     "classnames": "2.2.0",
     "react-router": "1.0.0-rc3"
   },
   "devDependencies": {
-    "@schibstedspain/frontend-pre-commit-rules": "6.6.1",
+    "@schibstedspain/frontend-pre-commit-rules": "6.7",
     "babel": "5.8.29",
     "babel-core": "5.8.30",
     "babel-eslint": "4.1.8",
