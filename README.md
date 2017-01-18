@@ -28,8 +28,7 @@ const singleLink = {
     literal: 'Alquiler de pisos en Madrid Capital',
     title: 'Element title',
     target: '_parent',
-    link: 'http://fotocasa.es',
-    icon: 'beer'
+    link: 'http://fotocasa.es'
 };
 
 const linkList = [
@@ -37,18 +36,27 @@ const linkList = [
     literal: 'Alquiler de pisos en Madrid Capital',
     title: 'Element title',
     target: '_parent',
-    link: 'http://fotocasa.es',
-    icon: 'beer'
+    link: 'http://fotocasa.es'
   },
   {
     literal: 'Comprar pisos',
     title: 'Element title',
     target: '_parent',
-    link: 'http://fotocasa.es',
-    icon: 'beer'
+    link: 'http://fotocasa.es'
   },
 ];
 ```
+
+## Implementation
+Pass a config object to a single Link component with information regarding literals, title, target and link. In addition you can specify className and pass an element as an SVG Icon:
+```
+<Link {...singleLink}
+    className={'sui-Link-customclass'}
+    icon={<Batteryempty size={16} svgClass='MySVGicon'/>}
+/>
+```
+
+If you need further information regarding SVG icons check out [SUI-Iconset](https://github.com/SUI-Components/svg-iconset) repository
 
 ## Instalation
 Clone this repository and run:
@@ -93,4 +101,3 @@ $ npm run doc
 
 That will publish in a gh-page for `docs` folder.
 What is a component without a public demo, isn´t ?!
-
