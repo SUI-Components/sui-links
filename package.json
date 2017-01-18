@@ -65,6 +65,7 @@
   },
   "devDependencies": {
     "@schibstedspain/frontend-pre-commit-rules": "6.7",
+    "@schibstedspain/sui-svgiconset": "1.0",
     "babel": "5.8.29",
     "babel-core": "5.8.30",
     "babel-eslint": "4.1.8",
@@ -74,7 +75,6 @@
     "eslint": "1.6.0",
     "eslint-plugin-react": "2.5.0",
     "expect": "1.6.0",
-    "font-awesome": "4.4.0",
     "gh-pages": "0.3.1",
     "lodash": "3.9.3",
     "mocha": "2.2.5",

@@ -1,12 +1,13 @@
-$fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.4.0/fonts' !default; // for referencing Bootstrap CDN font files directly
-@import '~font-awesome/scss/font-awesome';
-
-$c-customlink: #00dd00;
+$c-customlink: white;
 $c-disabledlink: #999999;
 $c-link: #0000dd;
 
 html {
   box-sizing: border-box;
+}
+
+body {
+  background: #888888;
 }
 
 *,
@@ -30,4 +31,8 @@ html {
   &-disabled {
     color: $c-disabledlink;
   }
+}
+
+.MySVGicon {
+  margin: 5px 5px -3px;
 }

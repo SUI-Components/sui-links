@@ -4,6 +4,7 @@ import { Router, Route, Redirect } from 'react-router';
 import createBrowserHistory from 'history/lib/createBrowserHistory';
 import { Link, LinkList } from '../src';
 import { htmlLinks, reactRouterLinks, disabledLinks } from './data';
+import { Britishpound, Bold, Dollar, Euro } from '@schibstedspain/sui-svgiconset';
 import '../src/index.scss';
 import './index.scss';
 
@@ -11,14 +12,34 @@ const linkGroups = () => {
   return (
     <div>
       <div className='link-Group'>
-        <h1>HTML Links</h1>
-        <h2>A single html link</h2>
-        <Link {...htmlLinks.single}
-          customclass={'sui-Link-customclass'}
-          url={'http://google.com'} />
+        <h1>SUI Link and Linklist Components</h1>
+        <h2>Currencies Links with SVG icons</h2>
+        <ul>
+          <li>
+            <Link {...htmlLinks.bitcoin}
+              className={'sui-Link-customclass'}
+              icon={<Britishpound size={16} svgClass='MySVGicon'/>} />
+          </li>
+          <li>
+            <Link {...htmlLinks.pound}
+              className={'sui-Link-customclass'}
+              icon={<Bold size={16} svgClass='MySVGicon'/>} />
+          </li>
+          <li>
+            <Link {...htmlLinks.dollar}
+              className={'sui-Link-customclass'}
+              icon={<Dollar size={16} svgClass='MySVGicon'/>} />
+          </li>
+          <li>
+            <Link {...htmlLinks.euro}
+              className={'sui-Link-customclass'}
+              icon={<Euro size={16} svgClass='MySVGicon'/>} />
+          </li>
+        </ul>
+
         <h2>An html link with click</h2>
-        <Link {...htmlLinks.withClick}
-          url={'#'} />
+        <Link {...htmlLinks.withClick} url={'#'} />
+        <Link {...htmlLinks.single} />
         <h2>A list of html links</h2>
         <LinkList list={htmlLinks.list} />
         <h2>An inline list of html links</h2>
@@ -30,7 +51,7 @@ const linkGroups = () => {
         <h1>React Router Links</h1>
         <h2>A single react router link</h2>
         <Link {...reactRouterLinks.single}
-          customclass={'sui-Link-customclass'}
+          className={'sui-Link-customclass'}
           url={'/foo'}
           useReactRouterLinks={true} />
         <h2>A react router link with click</h2>
@@ -50,12 +71,12 @@ const linkGroups = () => {
         <h1>Disabled Links</h1>
         <h2>A single disabled link</h2>
         <Link {...disabledLinks.single}
-          customclass={'sui-Link-customclass'}
+          className={'sui-Link-customclass'}
           url={'http://google.com'}
           disabled />
         <h2>A disabled link with click</h2>
         <Link {...disabledLinks.withClick}
-          customclass={'sui-Link-disabled'}
+          className={'sui-Link-disabled'}
           disabled
           url={'#'} />
         <h2>A list of disabled links</h2>
