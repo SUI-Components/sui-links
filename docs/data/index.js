@@ -20,7 +20,7 @@ const htmlLinks = {
     { literal: 'Comprar pisos en Vitoria', title: 'Element title', target: '_parent', url: 'http://fotocasa.es' },
     { literal: 'Alquiler de pisos en Murcia', title: 'Element title', target: '_parent', url: 'http://fotocasa.es' }
   ],
-  noFollow: { literal: 'nofollow link', title: 'Element title', target: '_parent', url: 'http://fotocasa.es', nofollow: true }
+  noFollow: { literal: 'nofollow link', title: 'Element title', target: '_parent', url: 'http://fotocasa.es', rel: 'noreferrer nofollow' }
 }
 
 const reactRouterLinks = {
@@ -42,7 +42,7 @@ const reactRouterLinks = {
     { literal: 'Comprar pisos en Vitoria', title: 'Element title', target: '_parent', url: '/test' },
     { literal: 'Alquiler de pisos en Murcia', title: 'Element title', target: '_parent', url: '/test' }
   ],
-  noFollow: { literal: 'nofollow link', title: 'Element title', target: '_parent', url: '/test', nofollow: true }
+  noFollow: { literal: 'nofollow link', title: 'Element title', target: '_parent', url: '/test', rel: 'nofollow' }
 }
 
 const disabledLinks = {

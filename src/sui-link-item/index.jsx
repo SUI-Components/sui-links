@@ -11,7 +11,7 @@ export default class LinkItem extends Component {
       handleClick: PropTypes.func,
       icon: PropTypes.element,
       literal: PropTypes.string,
-      nofollow: PropTypes.bool,
+      rel: PropTypes.string,
       target: PropTypes.string,
       title: PropTypes.string,
       url: PropTypes.string.isRequired,
@@ -29,7 +29,7 @@ export default class LinkItem extends Component {
       handleClick,
       icon,
       literal,
-      nofollow,
+      rel,
       target,
       title,
       useReactRouterLinks,
@@ -54,7 +54,7 @@ export default class LinkItem extends Component {
           title={title}
           to={url}
           onClick={handleClick}
-          rel={nofollow ? 'nofollow' : null}>
+          rel={rel}>
           {icon}
           {literal}
         </Link>
@@ -67,7 +67,7 @@ export default class LinkItem extends Component {
         title={title}
         target={target}
         onClick={handleClick}
-        rel={nofollow ? 'nofollow' : null}>
+        rel={rel}>
         {icon}
         {literal}
       </a>
