@@ -19,7 +19,8 @@ const htmlLinks = {
     { literal: 'Alquiler de apartamentos en Roquetas de mar', title: 'Element title', target: '_parent', url: 'http://fotocasa.es' },
     { literal: 'Comprar pisos en Vitoria', title: 'Element title', target: '_parent', url: 'http://fotocasa.es' },
     { literal: 'Alquiler de pisos en Murcia', title: 'Element title', target: '_parent', url: 'http://fotocasa.es' }
-  ]
+  ],
+  noFollow: { literal: 'nofollow link', title: 'Element title', target: '_parent', url: 'http://fotocasa.es', rel: 'noreferrer nofollow' }
 }
 
 const reactRouterLinks = {
@@ -40,7 +41,8 @@ const reactRouterLinks = {
     { literal: 'Alquiler de apartamentos en Roquetas de mar', title: 'Element title', target: '_parent', url: '/test' },
     { literal: 'Comprar pisos en Vitoria', title: 'Element title', target: '_parent', url: '/test' },
     { literal: 'Alquiler de pisos en Murcia', title: 'Element title', target: '_parent', url: '/test' }
-  ]
+  ],
+  noFollow: { literal: 'nofollow link', title: 'Element title', target: '_parent', url: '/test', rel: 'nofollow' }
 }
 
 const disabledLinks = {

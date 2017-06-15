@@ -45,6 +45,8 @@ const linkGroups = () => {
         <h2>An inline list of html links</h2>
         <LinkList list={htmlLinks.inlineList}
           displayInline />
+        <h2>An html link with nofollow</h2>
+        <Link {...htmlLinks.noFollow} url={'#'} />
       </div>
 
       <div className='link-Group'>
@@ -64,6 +66,11 @@ const linkGroups = () => {
         <h2>An inline list of react router links</h2>
         <LinkList list={reactRouterLinks.inlineList}
           displayInline
+          useReactRouterLinks />
+        <h2>A single react router link whith nofollow</h2>
+        <Link {...reactRouterLinks.noFollow}
+          className={'sui-Link-customclass'}
+          url={'/foo'}
           useReactRouterLinks />
       </div>
 
