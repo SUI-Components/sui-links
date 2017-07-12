@@ -1,7 +1,7 @@
 {
   "name": "@schibstedspain/sui-links",
   "version": "1.2.7",
-  "main": "lib/",
+  "main": "dist/",
   "keywords": [
     "SUI-Components",
     "ReactJS",
@@ -10,14 +10,14 @@
     "schibstedspain"
   ],
   "scripts": {
-    "clean:lib": "rimraf ./lib/*",
+    "clean:lib": "rimraf ./dist/*",
     "start": "npm run start:open && npm run start:server",
     "start:server": "webpack-dev-server",
     "start:open": "opener http://localhost:8080",
     "prelib": "npm run clean:lib -s",
     "lib": "npm run lib:scripts && npm run lib:styles",
     "lib:scripts": "babel src --out-dir lib",
-    "lib:styles": "copyfiles -u 1 './src/**/*.scss' lib",
+    "lib:styles": "copyfiles -u 1 './src/**/*.scss' dist",
     "predist": "npm run clean:dist -s",
     "prepublish": "npm run lib"
   },
