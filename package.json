@@ -1,7 +1,7 @@
 {
   "name": "@schibstedspain/sui-links",
   "version": "1.2.4",
-  "main": "dist/",
+  "main": "lib/",
   "keywords": [
     "SUI-Components",
     "ReactJS",
@@ -10,32 +10,23 @@
     "schibstedspain"
   ],
   "scripts": {
-    "clean:dist": "rm -Rf ./dist/*",
+    "clean:lib": "rimraf ./lib/*",
+    "start": "npm run start:open && npm run start:server",
+    "start:server": "webpack-dev-server",
+    "start:open": "opener http://localhost:8080",
+    "prelib": "npm run clean:lib -s",
+    "lib": "npm run lib:scripts && npm run lib:styles",
+    "lib:scripts": "babel src --out-dir lib",
+    "lib:styles": "copyfiles -u 1 './src/**/*.scss' lib",
     "predist": "npm run clean:dist -s",
-    "dist": "npm run dist:scripts && npm run dist:styles",
-    "dist:scripts": "babel src --out-dir dist",
-    "dist:styles": "node-sass src/index.scss dist/_sui-links.scss --importer ./scripts/importer.js",
-    "prepublish": "npm run dist",
-    "lint": "npm run lint:js && npm run lint:sass",
-    "lint:eslint": "eslint --ext=.js --ext=.jsx ./src/ ./test/ ./docs/",
-    "lint:sass": "node_modules/.bin/sass-lint src/**/*.scss -c -v",
-    "test": "mocha --compilers js:babel/register --recursive",
-    "test:watch": "npm run test -- -w test src --watch-extensions jsx",
-    "dev": "npm run dev:open && npm run dev:serve",
-    "dev:serve": "webpack-dev-server --devtool eval --progress --colors --content-base docs/",
-    "dev:open": "opener http://localhost:8080",
-    "predoc": "webpack --config webpack.doc.config.js",
-    "doc": "npm run doc:build",
-    "doc:build": "gh-pages -d docs",
-    "lint:js": "node_modules/.bin/eslint --ext .js,.jsx ./"
+    "prepublish": "npm run dist"
   },
   "repository": {
     "type": "git",
     "url": "git@github.com:SUI-Components/sui-links.git"
   },
   "pre-commit": [
-    "lint",
-    "test"
+    "lint"
   ],
   "peerDependencies": {
     "classnames": "2",
@@ -45,14 +36,17 @@
     "@schibstedspain/theme-basic": "5"
   },
   "devDependencies": {
-    "@schibstedspain/frontend-pre-commit-rules": "7",
+    "@schibstedspain/sui-lint": "2",
     "@schibstedspain/sui-svgiconset": "1.0",
-    "babel": "5.8.29",
-    "babel-core": "5.8.30",
-    "babel-loader": "5.3.2",
-    "classnames": "2.2.0",
+    "babel-cli": "6",
+    "babel-core": "6",
+    "babel-loader": "6",
+    "babel-preset-sui": "1",
+    "classnames": "2",
+    "copyfiles": "0.2.1",
     "css-loader": "0.15.3",
     "expect": "1.6.0",
+    "extract-text-webpack-plugin": "1",
     "gh-pages": "0.3.1",
     "lodash": "3.9.3",
     "mocha": "2.2.5",
@@ -63,10 +57,14 @@
     "react-addons-test-utils": "0.14",
     "react-dom": "0.14",
     "react-hot-loader": "1.2.7",
-    "react-router": "1.0.0-rc3",
+    "react-router": "2",
     "sass-loader": "1.0.2",
     "style-loader": "0.12.3",
     "webpack": "1.9.11",
+    "webpack-merge": "0.8.3",
     "webpack-dev-server": "1.9.0"
+  },
+  "babel": {
+    "presets": ["sui"]
   }
 }

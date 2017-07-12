@@ -1,4 +1,4 @@
-const htmlLinks = {
+export const htmlLinks = {
   bitcoin: { literal: 'Bitcoin', title: 'Link to Bitcoin', target: '_blank', url: 'https://bitcoin.org/es/' },
   pound: { literal: 'British Pound', title: 'Link to British Pound', target: '_blank', url: 'https://en.wikipedia.org/wiki/Pound_(currency)' },
   dollar: { literal: 'Dollar', title: 'Link to Dollar', target: '_blank', url: 'https://en.wikipedia.org/wiki/Dollar' },
@@ -23,7 +23,7 @@ const htmlLinks = {
   noFollow: { literal: 'nofollow link', title: 'Element title', target: '_parent', url: 'http://fotocasa.es', rel: 'noreferrer nofollow' }
 }
 
-const reactRouterLinks = {
+export const reactRouterLinks = {
   single: { literal: 'Alquiler de pisos en Madrid Capital', title: 'Element title', target: '_parent', url: '/test' },
   withClick: { literal: 'Previous click: never', title: 'Element title', target: '_parent', url: '/test', handleClick: function (event) { event.target.innerText = `Previous click: ${new Date().toLocaleString()}`; event.preventDefault() } },
   list: [
@@ -45,7 +45,7 @@ const reactRouterLinks = {
   noFollow: { literal: 'nofollow link', title: 'Element title', target: '_parent', url: '/test', rel: 'nofollow' }
 }
 
-const disabledLinks = {
+export const disabledLinks = {
   single: { literal: 'Alquiler de pisos en Madrid Capital', title: 'Element title', target: '_parent', url: 'http://fotocasa.es' },
   withClick: { literal: 'Previous click: never', title: 'Element title', target: '_parent', url: 'http://fotocasa.es', handleClick: function (event) { event.target.innerText = `Previous click: ${new Date().toLocaleString()}`; event.preventDefault() } },
   list: [
@@ -65,5 +65,3 @@ const disabledLinks = {
     { literal: 'Alquiler de pisos en Murcia', title: 'Element title', target: '_parent', url: 'http://fotocasa.es', disabled: true, customclass: 'sui-Link-disabled' }
   ]
 }
-
-export default {htmlLinks, reactRouterLinks, disabledLinks}
