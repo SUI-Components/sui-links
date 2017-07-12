@@ -16,7 +16,7 @@
     "start:open": "opener http://localhost:8080",
     "prelib": "npm run clean:lib -s",
     "lib": "npm run lib:scripts && npm run lib:styles",
-    "lib:scripts": "babel src --out-dir lib",
+    "lib:scripts": "babel src --out-dir dist",
     "lib:styles": "copyfiles -u 1 './src/**/*.scss' dist",
     "predist": "npm run clean:dist -s",
     "prepublish": "npm run lib"
