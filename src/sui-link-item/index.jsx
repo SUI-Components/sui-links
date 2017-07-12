@@ -1,9 +1,8 @@
 import React, { Component, PropTypes } from 'react'
-import { Link } from 'react-router'
+import Link from 'react-router/lib/Link'
 import cx from 'classnames'
 
 export default class LinkItem extends Component {
-
   static get propTypes () {
     return {
       className: PropTypes.string,
@@ -20,9 +19,7 @@ export default class LinkItem extends Component {
   }
 
   render () {
-    const className = cx('sui-Link', {
-      [`${this.props.className}`]: this.props.className
-    })
+    const className = cx('sui-Link', this.props.className)
 
     const {
       disabled,
