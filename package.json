@@ -1,6 +1,6 @@
 {
   "name": "@schibstedspain/sui-links",
-  "version": "1.2.8",
+  "version": "1.2.9",
   "main": "dist/",
   "keywords": [
     "SUI-Components",
