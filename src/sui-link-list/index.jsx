@@ -11,20 +11,23 @@ export default class LinkList extends Component {
     }
   }
 
-  render () {
+  _renderLink = (item, index) => {
+    const { displayInline, useReactRouterLinks } = this.props
     const classListItem = cx('sui-LinkList-listItem', {
-      'sui-ListItem--inline': this.props.displayInline
+      'sui-ListItem--inline': displayInline
     })
 
     return (
+      <li className={classListItem} key={index}>
+        <LinkItem {...item} useReactRouterLinks={useReactRouterLinks} />
+      </li>
+    )
+  }
+
+  render () {
+    return (
       <ul className='sui-LinkList'>
-        {this.props.list.map((item, index) => {
-          return (
-            <li className={classListItem} key={index}>
-              <LinkItem {...item} useReactRouterLinks={this.props.useReactRouterLinks} />
-            </li>
-          )
-        })}
+        {this.props.list.map(this._renderLink)}
       </ul>
     )
   }
