@@ -3,12 +3,10 @@ import LinkItem from '../sui-link-item'
 import cx from 'classnames'
 
 export default class LinkList extends Component {
-  static get propTypes () {
-    return {
-      displayInline: PropTypes.bool,
-      list: PropTypes.array,
-      useReactRouterLinks: PropTypes.bool
-    }
+  static propTypes = {
+    displayInline: PropTypes.bool,
+    list: PropTypes.array,
+    useReactRouterLinks: PropTypes.bool
   }
 
   _renderLink = (item, index) => {

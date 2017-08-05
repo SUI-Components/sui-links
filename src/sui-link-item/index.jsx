@@ -3,19 +3,22 @@ import Link from 'react-router/lib/Link'
 import cx from 'classnames'
 
 export default class LinkItem extends Component {
-  static get propTypes () {
-    return {
-      className: PropTypes.string,
-      disabled: PropTypes.bool,
-      handleClick: PropTypes.func,
-      icon: PropTypes.element,
-      literal: PropTypes.string,
-      rel: PropTypes.string,
-      target: PropTypes.string,
-      title: PropTypes.string,
-      url: PropTypes.string.isRequired,
-      useReactRouterLinks: PropTypes.bool
-    }
+  static propTypes = {
+    className: PropTypes.string,
+    disabled: PropTypes.bool,
+    handleClick: PropTypes.func,
+    icon: PropTypes.element,
+    literal: PropTypes.string,
+    rel: PropTypes.string,
+    target: PropTypes.string,
+    title: PropTypes.string,
+    url: PropTypes.string.isRequired,
+    useReactRouterLinks: PropTypes.bool
+  }
+
+  _renderContent () {
+    const { icon, literal } = this.props
+    return icon && literal ? <span>{icon}{literal}</span> : literal || icon
   }
 
   render () {
@@ -38,8 +41,7 @@ export default class LinkItem extends Component {
         <span className={className}
           onClick={handleClick}
           title={title}>
-          {icon}
-          {literal}
+          {this._renderContent()}
         </span>
       )
     }
@@ -52,8 +54,7 @@ export default class LinkItem extends Component {
           to={url}
           onClick={handleClick}
           rel={rel}>
-          {icon}
-          {literal}
+          {this._renderContent()}
         </Link>
       )
     }
@@ -65,8 +66,7 @@ export default class LinkItem extends Component {
         target={target}
         onClick={handleClick}
         rel={rel}>
-        {icon}
-        {literal}
+        {this._renderContent()}
       </a>
     )
   }
